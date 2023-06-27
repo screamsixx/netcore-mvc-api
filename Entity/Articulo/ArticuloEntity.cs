@@ -1,0 +1,107 @@
+﻿using Data.Articulo;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Entity.Articulo
+{
+    public class ArticuloEntity
+    {
+        private static class ConnectionHelper
+        {
+            private static string ConnectionString = "Data Source=DESKTOP-NNQ37B6;Initial Catalog=bd_tienda;User ID=sa;Password=123456789;";
+            public static SqlConnection GetConnection() { return new SqlConnection(ConnectionString); }
+        }
+
+        public static List<ArticuloModel> GetArticulos()
+        {
+            List<ArticuloModel> articulos = new List<ArticuloModel>();
+            using (SqlConnection connection = ConnectionHelper.GetConnection())
+            {
+                string query = "GetArticulos";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    ArticuloModel articulo = new ArticuloModel
+                    {
+                        ArticuloID = Convert.ToInt32(reader["ArticuloID"]),
+                        Codigo = reader["Codigo"].ToString(),
+                        Descripcion = reader["Descripcion"].ToString(),
+                        Precio = Convert.ToDecimal(reader["Precio"]),
+                        Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]),
+                        Stock = Convert.ToInt32(reader["Stock"]),
+                        TiendaID = Convert.ToInt32(reader["TiendaID"])
+                    };
+                    articulos.Add(articulo);
+                }
+                reader.Close();
+            }
+            return articulos;
+        }
+
+        //public static int InsertArticulo(ArticuloModel articulo)
+        //{
+        //    using (SqlConnection connection = ConnectionHelper.GetConnection())
+        //    {
+        //        string query = "InsertArticulo";
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        command.CommandType = CommandType.StoredProcedure;
+        //        command.Parameters.AddWithValue("@Codigo", articulo.Codigo);
+        //        command.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
+        //        command.Parameters.AddWithValue("@Precio", articulo.Precio);
+        //        command.Parameters.AddWithValue("@Imagen", articulo.Imagen);
+        //        command.Parameters.AddWithValue("@Stock", articulo.Stock);
+        //        command.Parameters.AddWithValue("@TiendaID", articulo.TiendaID);
+        //        connection.Open();
+        //        int rowsAffected = command.ExecuteNonQuery();
+        //        return rowsAffected;
+        //    }
+        //}
+
+        public static int InsertArticulo(ArticuloModel articulo)
+        {
+            using (SqlConnection connection = ConnectionHelper.GetConnection())
+            {
+                string query = "InsertArticulo";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Codigo", articulo.Codigo);
+                command.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
+                command.Parameters.AddWithValue("@Precio", articulo.Precio);
+                // Convertir el string base64 a un array de bytes
+                byte[] imagenBytes = Convert.FromBase64String(articulo.Imagen);
+                command.Parameters.AddWithValue("@Imagen", imagenBytes);
+                command.Parameters.AddWithValue("@Stock", articulo.Stock);
+                command.Parameters.AddWithValue("@TiendaID", articulo.TiendaID);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected;
+            }
+        }
+
+
+        public static int UpdateArticulo(ArticuloModel articulo)
+        {
+            using (SqlConnection connection = ConnectionHelper.GetConnection())
+            {
+                string query = "UpdateArticulo";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ArticuloID", articulo.ArticuloID);
+                command.Parameters.AddWithValue("@Codigo", articulo.Codigo);
+                command.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
+                command.Parameters.AddWithValue("@Precio", articulo.Precio);
+                command.Parameters.AddWithValue("@Imagen", articulo.Imagen);
+                command.Parameters.AddWithValue("@Stock", articulo.Stock);
+                command.Parameters.AddWithValue("@TiendaID", articulo.TiendaID);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected;
+            }
+        }
+    }
+}
