@@ -83,6 +83,21 @@ namespace Entity.Articulo
             }
         }
 
+        public static int DeleteArticuloByID(ArticuloModel articulo)
+        {
+            using (SqlConnection connection = ConnectionHelper.GetConnection())
+            {
+                string query = "DeleteArticuloByID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ArticuloID", articulo.ArticuloID);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected;
+            }
+        }
+
+
 
         public static int UpdateArticulo(ArticuloModel articulo)
         {
@@ -95,7 +110,10 @@ namespace Entity.Articulo
                 command.Parameters.AddWithValue("@Codigo", articulo.Codigo);
                 command.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
                 command.Parameters.AddWithValue("@Precio", articulo.Precio);
-                command.Parameters.AddWithValue("@Imagen", articulo.Imagen);
+                string base64Image = articulo.Imagen;
+                string imageData = base64Image.Substring(base64Image.IndexOf(',') + 1);
+                byte[] imagenBytes = Convert.FromBase64String(imageData);
+                command.Parameters.AddWithValue("@Imagen", imagenBytes);
                 command.Parameters.AddWithValue("@Stock", articulo.Stock);
                 command.Parameters.AddWithValue("@TiendaID", articulo.TiendaID);
                 connection.Open();
@@ -103,5 +121,36 @@ namespace Entity.Articulo
                 return rowsAffected;
             }
         }
+
+        public static List<ArticuloModel> GetProductosById(int articuloID)
+        {
+            List<ArticuloModel> productos = new List<ArticuloModel>();
+            using (SqlConnection connection = ConnectionHelper.GetConnection())
+            {
+                string query = "GetProductosById";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ArticuloID", articuloID);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    ArticuloModel producto = new ArticuloModel
+                    {
+                        ArticuloID = Convert.ToInt32(reader["ArticuloID"]),
+                        Codigo = reader["Codigo"].ToString(),
+                        Descripcion = reader["Descripcion"].ToString(),
+                        Precio = Convert.ToDecimal(reader["Precio"]),
+                        Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]),
+                        Stock = Convert.ToInt32(reader["Stock"]),
+                        TiendaID = Convert.ToInt32(reader["TiendaID"])
+                    };
+                    productos.Add(producto);
+                }
+                reader.Close();
+            }
+            return productos;
+        }
+
     }
 }

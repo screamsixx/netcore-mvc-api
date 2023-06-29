@@ -43,5 +43,34 @@ namespace Api.Controllers.ArticuloController
                 return BadRequest(new { message = "Error al actualizar el Articulo" });
             }
         }
+
+        [HttpPost("DeleteArticuloByID")]
+        public ActionResult DeleteArticuloByID([FromBody] ArticuloModel articulo)
+        {
+            int rowsAffected = ArticuloBusiness.DeleteArticuloByID(articulo);
+            if (rowsAffected > 0)
+            {
+                return Ok(new { message = "Articulo eliminado correctamente" });
+            }
+            else
+            {
+                return BadRequest(new { message = "Error al eliminar el Articulo" });
+            }
+        }
+        [HttpGet("GetProductosById")]
+        public ActionResult GetProductosById(int articuloID)
+        {
+            var data = ArticuloBusiness.GetProductosById(articuloID);
+            if (data != null)
+            {
+                return Ok(data);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+
     }
 }

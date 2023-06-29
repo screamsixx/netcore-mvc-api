@@ -14,10 +14,18 @@ namespace Business.Articulo
         {
             return ArticuloEntity.GetArticulos();
         }
+        public static List<ArticuloModel> GetProductosById(int articuloID)
+        {
+            return ArticuloEntity.GetProductosById(articuloID);
+        }
 
         public static int InsertArticulo(ArticuloModel articulo)
         {
             return ArticuloEntity.InsertArticulo(articulo);
+        }
+        public static int DeleteArticuloByID(ArticuloModel articulo)
+        {
+            return ArticuloEntity.DeleteArticuloByID(articulo);
         }
 
         public static int UpdateArticulo(ArticuloModel articulo)
