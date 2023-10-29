@@ -23,9 +23,5 @@ namespace Business.Cliente.Cliente
         {
             return ClienteEntity.UpdateCliente(cliente);
         }
-        public static List<ClienteModel> Login(string email, string password)
-        {
-            return ClienteEntity.Login(email,password);
-        }
     }
 }

@@ -9,7 +9,7 @@ namespace Entity.Cliente
     {
         private static class ConnectionHelper
         {
-            private static string ConnectionString = "Data Source=DESKTOP-NNQ37B6;Initial Catalog=bd_tienda;User ID=sa;Password=123456789;";
+            private static string ConnectionString = "Data Source=127.0.0.1;Initial Catalog=bd_tienda;User ID=dev;Password=123456789;";
             public static SqlConnection GetConnection() { return new SqlConnection(ConnectionString); }
         }
         public static List<ClienteModel> GetClientes()
@@ -75,38 +75,6 @@ namespace Entity.Cliente
                 return rowsAffected;
             }
         }
-
-        public static List<ClienteModel> Login(string email, string password)
-        {
-            List<ClienteModel> clientes = new List<ClienteModel>();
-
-            using (SqlConnection connection = ConnectionHelper.GetConnection())
-            {
-                string query = "Login";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@password", password);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    ClienteModel cliente = new ClienteModel
-                    {
-                        Email = reader["email"].ToString()
-                    };
-                    clientes.Add(cliente);
-                }
-
-                reader.Close();
-            }
-
-            return clientes;
-        }
-
-
-
 
     }
 }

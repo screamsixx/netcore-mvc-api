@@ -1,6 +1,7 @@
 ﻿using Data.Carrito;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Entity.Carrito
     {
         private static class ConnectionHelper
         {
-            private static string ConnectionString = "Data Source=DESKTOP-NNQ37B6;Initial Catalog=bd_tienda;User ID=sa;Password=123456789;";
+            private static string ConnectionString = "Data Source=127.0.0.1;Initial Catalog=bd_tienda;User ID=dev;Password=123456789;";
             public static SqlConnection GetConnection() { return new SqlConnection(ConnectionString); }
         }
         public static int InsertarCarrito(CarritoModel carrito)

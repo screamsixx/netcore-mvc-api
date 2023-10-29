@@ -1,14 +1,15 @@
 ﻿using Business.Tienda;
 using Data.Tienda;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.TiendaController
 {
     [Route("api/v1/[controller]")]
+    [Authorize]
     [ApiController]
     public class TiendaController : ControllerBase
     {
-
         [HttpGet("GetTiendas")]
         public ActionResult GetTiendas()
         {

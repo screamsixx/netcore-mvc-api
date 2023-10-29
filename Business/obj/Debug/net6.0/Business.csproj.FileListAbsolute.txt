@@ -15,3 +15,20 @@ C:\Users\screa\Documents\Api\Business\bin\Debug\net6.0\Entity.dll
 C:\Users\screa\Documents\Api\Business\bin\Debug\net6.0\Data.pdb
 C:\Users\screa\Documents\Api\Business\bin\Debug\net6.0\Entity.pdb
 C:\Users\screa\Documents\Api\Business\obj\Debug\net6.0\Business.csproj.CopyComplete
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Business.deps.json
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Business.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Business.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Data.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Entity.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Data.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\bin\Debug\net6.0\Entity.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.AssemblyInfo.cs
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.csproj.CopyComplete
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\refint\Business.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\Business.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Business\obj\Debug\net6.0\ref\Business.dll

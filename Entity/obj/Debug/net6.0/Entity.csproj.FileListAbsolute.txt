@@ -13,3 +13,18 @@ C:\Users\screa\Documents\Api\Entity\obj\Debug\net6.0\ref\Entity.dll
 C:\Users\screa\Documents\Api\Entity\bin\Debug\net6.0\Data.dll
 C:\Users\screa\Documents\Api\Entity\bin\Debug\net6.0\Data.pdb
 C:\Users\screa\Documents\Api\Entity\obj\Debug\net6.0\Entity.csproj.CopyComplete
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\bin\Debug\net6.0\Entity.deps.json
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\bin\Debug\net6.0\Entity.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\bin\Debug\net6.0\Entity.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\bin\Debug\net6.0\Data.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\bin\Debug\net6.0\Data.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.csproj.AssemblyReference.cache
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.AssemblyInfoInputs.cache
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.AssemblyInfo.cs
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.csproj.CopyComplete
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\refint\Entity.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\Entity.pdb
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Entity\obj\Debug\net6.0\ref\Entity.dll

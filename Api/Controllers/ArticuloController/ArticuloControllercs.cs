@@ -1,10 +1,12 @@
 ﻿using Business.Articulo;
 using Data.Articulo;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.ArticuloController
 {
     [Route("api/v1/[controller]")]
+    [Authorize]
     [ApiController]
     public class ArticuloController : ControllerBase
     {

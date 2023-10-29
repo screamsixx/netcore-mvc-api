@@ -2,11 +2,14 @@
 using Business.Carrito;
 using Data.Articulo;
 using Data.Carrito;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.CarritoController
 {
     [Route("api/v1/[controller]")]
+    [Authorize]
+
     [ApiController]
     public class CarritoController: ControllerBase
     {

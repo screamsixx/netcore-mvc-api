@@ -1,11 +1,13 @@
 ﻿using Business.Cliente.Cliente;
 using Data.Cliente;
 using Entity.Cliente;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
     [Route("api/v1/[controller]")]
+    [Authorize]
     [ApiController]
     public class ClienteController : ControllerBase
     {
@@ -41,15 +43,6 @@ namespace Api.Controllers
                 return BadRequest(new { message = "Error al actualizar el Cliente" });
             }
         }
-        [HttpPost("Login")]
-        public ActionResult Login(string email, string password)
-        {
-            var result= ClienteBusiness.Login(email, password);
-            return Ok(result);
-        }
-
-
-
 
     }
 }
