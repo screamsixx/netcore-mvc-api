@@ -1056,11 +1056,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\screa\\Documents\\Api\\Api\\Api.csproj",
+      "projectUniqueName": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\Users\\screa\\Documents\\Api\\Api\\Api.csproj",
+      "projectPath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\screa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\screa\\Documents\\Api\\Api\\obj\\",
+      "outputPath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\screa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1071,21 +1071,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\screa\\Documents\\Api\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\screa\\Documents\\Api\\Business\\Business.csproj"
+            "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Business\\Business.csproj"
             },
-            "C:\\Users\\screa\\Documents\\Api\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\screa\\Documents\\Api\\Data\\Data.csproj"
+            "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Data\\Data.csproj"
             },
-            "C:\\Users\\screa\\Documents\\Api\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\screa\\Documents\\Api\\Entity\\Entity.csproj"
+            "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Entity\\Entity.csproj"
             }
           }
         }
@@ -1124,7 +1123,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
