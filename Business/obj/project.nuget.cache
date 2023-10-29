@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sbel1z0pThucXRt3lgNDhytjzjSr0N/qeMttPlxlOIAQWgP5URJFT/D/kJibuavQTBoNle2cUKuBmjnWOCUn8g==",
+  "dgSpecHash": "jytnjJ8K6UjN2APG6ZWrIsDpn6+TjDz40d71odwy8Xgmdt66wiUrYBxr9vzCFlykgxSUGvEJQw7svEq6L8SeNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\screa\\Documents\\Api\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\screa\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\screa\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

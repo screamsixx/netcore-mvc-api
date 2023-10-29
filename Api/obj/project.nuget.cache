@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1tXE0hSg9XRoVDsrXmU0ErwQiBPK+q5jGgMqIQl4CkJZKioQxYH1E1MHXbdfaJ9tNMiUH8vkbnAWFgot1lsBPw==",
+  "dgSpecHash": "RrsHfFOcALpTcpXLWk3H/oo60tP/Su8opK44exGtKs/bwYTJou+K9ruu+WoCAvqp5a3BWY0a5Hn5cxF4W65DRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\screa\\Documents\\Api\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\screa\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\screa\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

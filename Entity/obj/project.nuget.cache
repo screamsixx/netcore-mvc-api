@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nblqq0jMcP7+U98wCkUMBm1N8kN54yHTs3ENOw3RqhZq/QUaQRg+LEbUC1h0bSWX4UIe3lhEnQFGHqgamPCSOw==",
+  "dgSpecHash": "y52591jrtkzxKiEZvy1C/Mtoh8NOlQknlVjJ9NHYrXpG2bRmCeUfhkVBWZip0vR1dHh/rVkkL+tlJahb8ydYVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\screa\\Documents\\Api\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\screa\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\screa\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

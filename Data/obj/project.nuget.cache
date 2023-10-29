@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "un1mTVxlAj8i7/lKGSDqmKkgI1j+sF6rFbnW5UkouDvkymYc5nexvvcp0GRUDAO7gv2jqZFp0Wbz96JZlk2taw==",
+  "dgSpecHash": "DiPu8lfYUXbMBM5bqrPTWwsMRF27ZjFZyAAzw6xrSJlno1LMz8LT/QpnP/yqj5YnCeeyAX9rpetLduuTD4ljCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\screa\\Documents\\Api\\Data\\Data.csproj",
+  "projectFilePath": "C:\\Users\\screa\\OneDrive\\Documentos\\ANGULAR + .NET\\netcore-mvc-api\\Data\\Data.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
