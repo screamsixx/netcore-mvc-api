@@ -114,3 +114,4 @@ C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Api\bin\Debug\
 C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\screa\OneDrive\Documentos\ANGULAR + .NET\netcore-mvc-api\Api\bin\Debug\net6.0\Newtonsoft.Json.dll

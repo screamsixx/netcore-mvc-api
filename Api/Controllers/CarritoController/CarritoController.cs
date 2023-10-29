@@ -8,13 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers.CarritoController
 {
     [Route("api/v1/[controller]")]
-    [Authorize]
-
     [ApiController]
     public class CarritoController: ControllerBase
     {
 
         [HttpPost("InsertCarrito")]
+        [Authorize]
         public IActionResult InsertCarrito([FromBody] CarritoModel carrito)
         {
             int rowsAffected = CarritoBusiness.InsertCarrito(carrito);
@@ -29,6 +28,7 @@ namespace Api.Controllers.CarritoController
         }
 
         [HttpGet("GetCarritoByClienteID")]
+        [Authorize]
         public IActionResult GetCarritoByClienteID(int id)
         {
             var carritos = CarritoBusiness.GetCarritoByClienteID(id);
@@ -44,6 +44,7 @@ namespace Api.Controllers.CarritoController
         }
 
         [HttpPost("SumarCantidadCarrito")]
+        [Authorize]
         public IActionResult SumarCantidadCarrito([FromBody] Detallecarrito detallecarrito)
         {
             int rowsAffected = CarritoBusiness.SumarCantidadCarrito(detallecarrito);
@@ -58,6 +59,7 @@ namespace Api.Controllers.CarritoController
         }
 
         [HttpPost("RestarCantidadCarrito")]
+        [Authorize]
         public IActionResult RestarCantidadCarrito([FromBody] Detallecarrito detallecarrito)
         {
             int rowsAffected = CarritoBusiness.RestarCantidadCarrito(detallecarrito);

@@ -1,45 +1,50 @@
 ﻿using Business.Usuario;
 using Data.Usuario;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Entity.Jwt;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+
 namespace Api.Controllers.UsuarioController
 {
     [Route("api/v1/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly string secretkey;
-
-        public UsuarioController(IConfiguration config)
+        public IConfiguration _configuration;
+        public UsuarioController(IConfiguration configuration)
         {
-            secretkey = config.GetSection("settings").GetSection("secretkey").ToString();
-
+            _configuration = configuration;
         }
 
 
         [HttpPost("Login")]
-        public ActionResult Login(string email, string password)
+        public ActionResult Login([FromBody] Usuario usr)
         {
-            var result = UsuarioBusiness.Login(email, password);
-            if (result)
+            if (UsuarioBusiness.Login(usr.Email, usr.Password))
             {
-                // Aquí generas el token y lo envías como respuesta
-                var keyBytes= Encoding.UTF8.GetBytes(secretkey);
-                var claims = new ClaimsIdentity();
-                 claims.AddClaim( new Claim(ClaimTypes.NameIdentifier, email));
-                var tokendescriptor = new SecurityTokenDescriptor
+                var jwt = _configuration.GetSection("JwtSettings").Get<Jwt>();
+                var claims = new[]
                 {
-                    Subject = claims,
-                    Expires = DateTime.UtcNow.AddDays(90), //Expira en 90 dias
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(keyBytes), SecurityAlgorithms.HmacSha256Signature)
+                    new Claim(JwtRegisteredClaimNames.Sub, jwt.Subjet),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                    new Claim("email", usr.Email)
+
                 };
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var tokenConfig = tokenHandler.CreateToken(tokendescriptor);
-                string tokencreado = tokenHandler.WriteToken(tokenConfig);
-                return Ok(new { tokencreado });
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key));
+                var signIn = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
+                var tokencreado = new JwtSecurityToken(
+                    jwt.Issuer,
+                    jwt.Audience,
+                    claims,
+                    expires: DateTime.Now.AddDays(1),
+                    signingCredentials:signIn
+                    );
+                return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(tokencreado) });
             }
             else
             {

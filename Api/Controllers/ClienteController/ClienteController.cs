@@ -4,20 +4,21 @@ using Entity.Cliente;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers
+namespace Api.Controllers.Cliente 
 {
     [Route("api/v1/[controller]")]
-    [Authorize]
     [ApiController]
     public class ClienteController : ControllerBase
     {
         [HttpGet("GetClientes")]
+        [Authorize]
         public ActionResult GetClientes()
         {
             var data = ClienteBusiness.GetClientes();
             return Ok(data);
         }
         [HttpPost("InsertClientes")]
+        [Authorize]
         public ActionResult InsertClientes(ClienteModel cliente)
         {
             int rowsAffected = ClienteBusiness.InsertClientes(cliente);
@@ -31,6 +32,7 @@ namespace Api.Controllers
             }
         }
         [HttpPost("UpdateCliente")]
+        [Authorize]
         public ActionResult UpdateCliente(ClienteModel cliente)
         {
             int rowsAffected = ClienteBusiness.UpdateCliente(cliente);

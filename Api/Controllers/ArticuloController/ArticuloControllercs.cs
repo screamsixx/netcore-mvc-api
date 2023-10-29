@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers.ArticuloController
 {
     [Route("api/v1/[controller]")]
-    [Authorize]
     [ApiController]
     public class ArticuloController : ControllerBase
     {
         [HttpGet("GetArticulos")]
+         
         public ActionResult GetArticulos()
         {
             var data = ArticuloBusiness.GetArticulos();
@@ -18,6 +18,7 @@ namespace Api.Controllers.ArticuloController
         }
 
         [HttpPost("InsertArticulos")]
+         
         public IActionResult InsertArticulos([FromBody] ArticuloModel articulo)
         {
             int rowsAffected = ArticuloBusiness.InsertArticulo(articulo);
@@ -33,6 +34,7 @@ namespace Api.Controllers.ArticuloController
 
 
         [HttpPost("UpdateArticulo")]
+         
         public ActionResult UpdateArticulo([FromBody] ArticuloModel articulo)
         {
             int rowsAffected = ArticuloBusiness.UpdateArticulo(articulo);
@@ -47,6 +49,7 @@ namespace Api.Controllers.ArticuloController
         }
 
         [HttpPost("DeleteArticuloByID")]
+         
         public ActionResult DeleteArticuloByID([FromBody] ArticuloModel articulo)
         {
             int rowsAffected = ArticuloBusiness.DeleteArticuloByID(articulo);
@@ -60,6 +63,7 @@ namespace Api.Controllers.ArticuloController
             }
         }
         [HttpGet("GetProductosById")]
+         
         public ActionResult GetProductosById(int articuloID)
         {
             var data = ArticuloBusiness.GetProductosById(articuloID);

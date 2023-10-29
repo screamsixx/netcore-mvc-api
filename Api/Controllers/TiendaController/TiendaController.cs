@@ -6,17 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers.TiendaController
 {
     [Route("api/v1/[controller]")]
-    [Authorize]
+     
     [ApiController]
     public class TiendaController : ControllerBase
     {
         [HttpGet("GetTiendas")]
+         
         public ActionResult GetTiendas()
         {
             var data = TiendaBusiness.GetTiendas();
             return Ok(data);
         }
         [HttpPost("InsertTiendas")]
+         
         public ActionResult InsertTiendas(TiendaModel Tienda)
         {
             int rowsAffected = TiendaBusiness.InsertTienda(Tienda);
@@ -30,6 +32,7 @@ namespace Api.Controllers.TiendaController
             }
         }
         [HttpPost("UpdateTienda")]
+         
         public ActionResult UpdateTienda(TiendaModel Tienda)
         {
             int rowsAffected = TiendaBusiness.UpdateTienda(Tienda);

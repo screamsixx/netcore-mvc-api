@@ -27,16 +27,25 @@ namespace Entity.Articulo
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ArticuloModel articulo = new ArticuloModel
+                   ArticuloModel articulo = new ArticuloModel
                     {
                         ArticuloID = Convert.ToInt32(reader["ArticuloID"]),
                         Codigo = reader["Codigo"].ToString(),
                         Descripcion = reader["Descripcion"].ToString(),
                         Precio = Convert.ToDecimal(reader["Precio"]),
-                        Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]),
+                        //Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]),
                         Stock = Convert.ToInt32(reader["Stock"]),
                         TiendaID = Convert.ToInt32(reader["TiendaID"])
                     };
+                    if (reader["Imagen"] != DBNull.Value)
+                    {
+                        articulo.Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]);
+                    }
+                    else
+                    {
+                        // Si la columna "Imagen" es nula, puedes asignar un valor predeterminado o dejarla en blanco según tus necesidades.
+                        articulo.Imagen = ""; // O cualquier otro valor predeterminado
+                    }
                     articulos.Add(articulo);
                 }
                 reader.Close();
