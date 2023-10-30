@@ -10,7 +10,7 @@ namespace Business.Usuario
 {
     public class UsuarioBusiness
     {
-        public static bool Login(string email, string password)
+        public static isvalid Login(string email, string password)
         {
             return UsuarioEntity.Login(email, password);
         }

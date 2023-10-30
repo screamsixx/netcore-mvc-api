@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Entity.Usuario;
 
 namespace Api.Controllers.UsuarioController
 {
@@ -24,7 +25,10 @@ namespace Api.Controllers.UsuarioController
         [HttpPost("Login")]
         public ActionResult Login([FromBody] Usuario usr)
         {
-            if (UsuarioBusiness.Login(usr.Email, usr.Password))
+            isvalid ob= new isvalid();
+            ob = UsuarioBusiness.Login(usr.Email, usr.Password);
+
+            if ( ob.Valid)
             {
                 var jwt = _configuration.GetSection("JwtSettings").Get<Jwt>();
                 var claims = new[]
@@ -44,7 +48,7 @@ namespace Api.Controllers.UsuarioController
                     expires: DateTime.Now.AddDays(1),
                     signingCredentials:signIn
                     );
-                return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(tokencreado) });
+                return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(tokencreado), email=usr.Email, id=ob.UserId });
             }
             else
             {

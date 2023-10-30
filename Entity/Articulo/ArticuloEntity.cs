@@ -120,16 +120,25 @@ namespace Entity.Articulo
                 command.Parameters.AddWithValue("@Codigo", articulo.Codigo);
                 command.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
                 command.Parameters.AddWithValue("@Precio", articulo.Precio);
-                string base64Image = articulo.Imagen;
-                string imageData = base64Image.Substring(base64Image.IndexOf(',') + 1);
-                byte[] imagenBytes = Convert.FromBase64String(imageData);
-                command.Parameters.AddWithValue("@Imagen", imagenBytes);
+                if (articulo.Imagen != null)
+                {
+                    string base64Image = articulo.Imagen;
+                    string imageData = base64Image.Substring(base64Image.IndexOf(',') + 1);
+                    byte[] imagenBytes = Convert.FromBase64String(imageData);
+                    command.Parameters.AddWithValue("@Imagen", imagenBytes);
+                }
+                //else
+                //{
+                //    // En caso de que la imagen sea nula, puedes asignar un valor predeterminado o DBNull.Value a la columna en la base de datos.
+                //    command.Parameters.AddWithValue("@Imagen", DBNull.Value);
+                //}
                 command.Parameters.AddWithValue("@Stock", articulo.Stock);
                 command.Parameters.AddWithValue("@TiendaID", articulo.TiendaID);
                 connection.Open();
                 int rowsAffected = command.ExecuteNonQuery();
                 return rowsAffected;
             }
+
         }
 
         public static List<ArticuloModel> GetProductosById(int articuloID)
@@ -151,10 +160,19 @@ namespace Entity.Articulo
                         Codigo = reader["Codigo"].ToString(),
                         Descripcion = reader["Descripcion"].ToString(),
                         Precio = Convert.ToDecimal(reader["Precio"]),
-                        Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]),
                         Stock = Convert.ToInt32(reader["Stock"]),
                         TiendaID = Convert.ToInt32(reader["TiendaID"])
                     };
+                    // Verificar si la columna "Imagen" no es nula antes de intentar convertirla
+                    if (!reader.IsDBNull(reader.GetOrdinal("Imagen")))
+                    {
+                        producto.Imagen = "data:image/png;base64," + Convert.ToBase64String((byte[])reader["Imagen"]);
+                    }
+                    else
+                    {
+                        // Asignar un valor predeterminado o nulo en caso de que la imagen sea nula
+                        producto.Imagen = null;
+                    }
                     productos.Add(producto);
                 }
                 reader.Close();
@@ -164,3 +182,5 @@ namespace Entity.Articulo
 
     }
 }
+
+

@@ -19,9 +19,11 @@ namespace Entity.Usuario
             public static SqlConnection GetConnection() { return new SqlConnection(ConnectionString); }
         }
 
-        public static bool Login(string email, string password)
+        public static isvalid Login(string email, string password)
         {
-            bool isValidLogin = false;
+                     isvalid ob = new isvalid();
+
+        bool isValidLogin = false;
             using (SqlConnection connection = ConnectionHelper.GetConnection())
             {
                 string query = "Login";
@@ -33,16 +35,23 @@ namespace Entity.Usuario
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    string result = reader["email"].ToString();
-                    if (result != "0")
+                    string clienteID = reader["ClienteID"].ToString();
+
+                    if (clienteID != "0")
                     {
-                        isValidLogin = true;
+                        ob.Valid = true;
+                        ob.Email = email;
+                        ob.UserId = clienteID;
+                    }
+                    else
+                    {
+                        ob.Valid = false;   
                     }
                     break;
                 }
                 reader.Close();
             }
-            return isValidLogin;
+            return ob;
         }
     }
 }

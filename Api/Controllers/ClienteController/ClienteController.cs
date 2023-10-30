@@ -11,14 +11,14 @@ namespace Api.Controllers.Cliente
     public class ClienteController : ControllerBase
     {
         [HttpGet("GetClientes")]
-        [Authorize]
+         
         public ActionResult GetClientes()
         {
             var data = ClienteBusiness.GetClientes();
             return Ok(data);
         }
         [HttpPost("InsertClientes")]
-        [Authorize]
+         
         public ActionResult InsertClientes(ClienteModel cliente)
         {
             int rowsAffected = ClienteBusiness.InsertClientes(cliente);
@@ -32,7 +32,7 @@ namespace Api.Controllers.Cliente
             }
         }
         [HttpPost("UpdateCliente")]
-        [Authorize]
+         
         public ActionResult UpdateCliente(ClienteModel cliente)
         {
             int rowsAffected = ClienteBusiness.UpdateCliente(cliente);

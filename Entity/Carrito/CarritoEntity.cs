@@ -54,9 +54,21 @@ namespace Entity.Carrito
                         carrito.Cantidad = Convert.ToInt32(reader["Cantidad"]);
                         carrito.Descripcion = Convert.ToString(reader["Descripcion"]);
                         carrito.Precio = Convert.ToDecimal(reader["Precio"]);
-                        carrito.Imagen = Convert.ToBase64String((byte[])reader["Imagen"]);
+
+                        // Verificar si la columna "Imagen" no es nula antes de intentar convertirla
+                        if (!reader.IsDBNull(reader.GetOrdinal("Imagen")))
+                        {
+                            carrito.Imagen = Convert.ToBase64String((byte[])reader["Imagen"]);
+                        }
+                        else
+                        {
+                            // Asignar un valor predeterminado o nulo en caso de que la imagen sea nula
+                            carrito.Imagen = null;
+                        }
+
                         carritos.Add(carrito);
                     }
+
                 }
             }
 
